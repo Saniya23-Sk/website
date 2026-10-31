@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Website</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4ff;
+    color: #222;
+}
+
+/* Navigation */
+
+header {
+    background: #172554;
+    padding: 18px;
+    text-align: center;
+}
+
+header h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 12px;
+    margin: 3px;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background: #4361ee;
+}
+
+/* Pages */
+
+section {
+    display: none;
+    padding: 35px 15px;
+    text-align: center;
+    min-height: 70vh;
+}
+
+section:target {
+    display: block;
+}
+
+#home {
+    display: block;
+}
+
+/* Hide Home when another page is selected */
+
+body:has(section:target:not(#home)) #home {
+    display: none;
+}
+
+/* Home Page */
+
+.hero {
+    background: linear-gradient(135deg, #4361ee, #7209b7);
+    color: white;
+    padding: 60px 20px;
+    border-radius: 15px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+
+.card {
+    background: white;
+    padding: 22px;
+    margin: 15px auto;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #0001;
+}
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    background: #4361ee;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #3048c5;
+}
+
+/* Forms */
+
+form {
+    background: white;
+    padding: 25px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px #0002;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+form .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #172554;
+    color: white;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 480px) {
+
+    nav a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Header and Navigation -->
+
+<header>
+
+    <h2>🌐 My Website</h2>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#login">Login</a>
+        <a href="#register">Register</a>
+    </nav>
+
+</header>
+
+
+<!-- Home Page -->
+
+<section id="home">
+
+    <div class="hero">
+
+        <h1>Welcome to My Website!</h1>
+
+        <p>
+            Explore our website and discover
+            interesting information.
+        </p>
+
+        <a href="#contact" class="btn">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- About Page -->
+
+<section id="about">
+
+    <h1>About Us</h1>
+
+    <div class="card">
+
+        <p>
+            Welcome to our website.
+            Our goal is to provide useful
+            information in a simple way.
+        </p>
+
+        <a href="#home" class="btn">
+            Back to Home
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Contact Page -->
+
+<section id="contact">
+
+    <h1>Contact Us</h1>
+
+    <p>
+        If you have any questions,
+        please contact us using the form below.
+    </p>
+
+    <form action="#contact" method="get">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+            aria-label="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter Your Email"
+            aria-label="Your Email"
+            required
+        >
+
+        <input
+            type="tel"
+            name="mobile"
+            placeholder="Enter Your Mobile Number"
+            aria-label="Your Mobile Number"
+            required
+        >
+
+        <textarea
+            name="message"
+            placeholder="Write Your Message"
+            aria-label="Your Message"
+            required
+        ></textarea>
+
+        <button type="submit" class="btn">
+            Send Message
+        </button>
+
+        <br><br>
+
+        <a href="#home" class="btn">
+            Back to Home
+        </a>
+
+    </form>
+
+</section>
+
+
+<!-- Login Page -->
+
+<section id="login">
+
+    <form action="#login" method="get">
+
+        <h1>Login</h1>
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            aria-label="Username"
+            required
+        >
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            aria-label="Password"
+            required
+        >
+
+        <button type="submit" class="btn">
+            Login
+        </button>
+
+        <p style="margin-top:20px">
+
+            Don't have an account?
+
+            <a href="#register">Register</a>
+
+        </p>
+
+        <a href="#home" class="btn">
+            Back to Home
+        </a>
+
+    </form>
+
+</section>
+
+
+<!-- Register Page -->
+
+<section id="register">
+
+    <form action="#register" method="get">
+
+        <h1>Create Your Account</h1>
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            aria-label="Username"
+            required
+        >
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            aria-label="Email"
+            required
+        >
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Create Password"
+            aria-label="Create Password"
+            required
+        >
+
+        <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            aria-label="Confirm Password"
+            required
+        >
+
+        <button type="submit" class="btn">
+            Register
+        </button>
+
+        <p style="margin-top:20px">
+
+            Already have an account?
+
+            <a href="#login">Login</a>
+
+        </p>
+
+        <a href="#home" class="btn">
+            Back to Home
+        </a>
+
+    </form>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>© 2026 My Website | All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>
